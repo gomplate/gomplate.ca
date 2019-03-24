@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300');
+
+html {
+    height: 100%;
+}
+
+
+:root {
+    --light-bg: rgb(255, 255, 255, 1);
+    --dark-bg: rgb(32, 32, 40, 1);
+    --light-font-color: hsl(240, 11.1%, 14.1%);
+    --main-color: rgba(145, 132, 121, 1);
+    --secondary-color:  rgb(120, 133, 145);
+    --sec-hsl: hsl(209,17.2%,56.9%);
+    --nav-hover-color: hsl(209,17.2%,75%);
+    --hover-bg: hsl(209,17.2%,56.9%);
+
+    /* defaults to light theme... */
+    --font-color: hsl(240, 11.1%, 14.1%);
+    --nav-font-color: hsl(240, 11.1%, 100%);
+    --bg-color: hsl(240, 11.1%, 99%);
+    --link-color: hsl(209, 17.2%, 40%);
+    --link-under-color: hsl(240, 25%, 14.1%);
+}
+
+body {
+    font-family: 'Source Sans Pro', 'Roboto', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    margin: 0;
+    min-height: 100%;
+    display: grid;
+    color: var(--font-color);
+    background-color: var(--bg-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --font-color: hsl(240, 11.1%, 95%);
+        --nav-font-color: hsl(240, 11.1%, 14.1%);
+        --bg-color: hsl(240, 11.1%, 14.1%);
+        --link-color: hsl(209,17.2%,70%);
+        --link-under-color: hsl(240, 25%, 95%);
+        --main-color: rgba(145, 132, 121, 0.8);
+    }
+
+    body {
+        font-weight: 200;
+    }
+}
+
+
+a {
+    text-decoration-line: underline;
+    text-decoration-style: dashed;
+    text-decoration-color: var(--link-under-color);
+    -webkit-text-decoration-style: dashed;
+    color: var(--link-color);
+}
+
+.wrapper {
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    min-height: 100%;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 64px 4fr 64px;
+}
+
+
+main {
+    grid-column: 2 / -2;
+    grid-row: 2 / 3;
+    padding: 0;
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 3fr 1fr;
+}
+
+main > .gomplate-logo {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    justify-self: center;
+    align-self: center;
+}
+
+main > .gomplate-logo > * > img{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+main > .gomplate-text {
+    grid-column: 2 / -2;
+    grid-row: 2 / 3;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+}
+
+nav {
+    padding: 0;
+    margin: 0;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    clear: both;
+    background-color: var(--main-color);
+    justify-self: stretch;
+    align-self: stretch;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr;
+    box-shadow: 0 1.5px 3px rgba(0,0,0,.24),0 3px 8px rgba(0,0,0,.05);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+nav > div {
+    height: 100%;
+    text-align: center;
+
+    justify-self: end;
+    align-self: center;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    grid-column: auto;
+    grid-row: 1 / 2;
+}
+
+nav > *:hover {
+    background-color: var(--hover-bg);
+    color: var(--nav-hover-color);
+}
+
+nav > div > a {
+    color: var(--nav-font-color);
+    padding-left: 1em;
+    padding-right: 1em;
+
+    text-decoration: none;
+    -webkit-text-decoration: none;
+}
+
+footer {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    height: 64px;
+    border-top: 4px solid var(--main-color);
+    margin-top: -4px;
+    box-shadow: 0 -1.5px 3px rgba(0,0,0,.24), 0 -3px 8px rgba(0,0,0,.05);
+
+    text-align: center;
+    line-height: 2em;
+}
+
+.gomplate-logo {
+    width: 75vw;
+}
