@@ -1,0 +1,4 @@
+http://localhost:2015
+
+root * ./site
+file_server
